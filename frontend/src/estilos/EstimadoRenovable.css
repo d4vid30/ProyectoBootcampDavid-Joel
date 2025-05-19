@@ -1,0 +1,32 @@
+/* Fondo con degradado para toda la pantalla */
+.info-estimador-container {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Tarjeta con degradado sutil y efecto de desenfoque */
+.card-estimador {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 15px;
+}
+
+/* Botón con degradado y efecto hover */
+.btn-gradient {
+    background: linear-gradient(135deg, #28a745, #218838);
+    border: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.5);
+}
+
+/* Personalización de los campos para mejorar la visibilidad sobre fondo oscuro */
+.form-control,
+.form-select {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+}

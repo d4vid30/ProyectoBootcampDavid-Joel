@@ -1,4 +1,4 @@
-import './App.css';
+import "./estilos/App.css";
 import InfoEnergia from './components/InfoEnergia';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Estimador from './components/EstimadorRenovable';
@@ -13,7 +13,6 @@ function App() {
         <Route path="/graficos" element={<Graficos />} />
       </Routes>
     </Router>
-   
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../estilos/EstimadoRenovable.css";
 
 const EstimadorRenovable = () => {
   const [paises, setPaises] = useState([]);
@@ -38,12 +39,12 @@ const EstimadorRenovable = () => {
   };
 
   return (
-    <div className="min-vh-100 d-flex justify-content-center align-items-center bg-light">
-      <div className="card shadow-lg p-5" style={{ maxWidth: "600px", width: "100%", borderRadius: "15px" }}>
-        <h2 className="text-center text-success mb-4">💡 Estimador de Energía Renovable</h2>
+    <div className="min-vh-100 d-flex justify-content-center align-items-center info-estimador-container">
+      <div className="card shadow-lg p-5 card-estimador">
+        <h2 className="text-center text-white mb-4">💡 Estimador de Energía Renovable</h2>
 
         <div className="mb-3">
-          <label className="form-label fw-bold">🌍 País</label>
+          <label className="form-label fw-bold text-white">🌍 País</label>
           <select className="form-select" value={pais} onChange={e => setPais(e.target.value)}>
             <option value="">-- Selecciona un país --</option>
             {paises.map(p => (
@@ -53,7 +54,7 @@ const EstimadorRenovable = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label fw-bold">📅 Año</label>
+          <label className="form-label fw-bold text-white">📅 Año</label>
           <input
             type="number"
             className="form-control"
@@ -64,7 +65,7 @@ const EstimadorRenovable = () => {
         </div>
 
         <div className="mb-3">
-          <label className="form-label fw-bold">⚡ Consumo eléctrico total (kWh)</label>
+          <label className="form-label fw-bold text-white">⚡ Consumo eléctrico total (kWh)</label>
           <input
             type="number"
             className="form-control"
@@ -75,7 +76,7 @@ const EstimadorRenovable = () => {
         </div>
 
         <div className="d-grid mt-3">
-          <button className="btn btn-success fw-bold" onClick={calcular}>
+          <button className="btn btn-gradient fw-bold" onClick={calcular}>
             Calcular Proporción
           </button>
         </div>
@@ -95,7 +96,7 @@ const EstimadorRenovable = () => {
         )}
 
         <div className="d-grid mt-3">
-          <Link to="/" className="btn btn-outline-success">
+          <Link to="/" className="btn btn-outline-light">
             ⬅ Regresar al inicio
           </Link>
         </div>
