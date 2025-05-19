@@ -1,0 +1,95 @@
+/* Fondo principal con imagen solar suave */
+.info-container {
+    background: linear-gradient(135deg, rgba(245, 247, 250, 0.8), rgba(200, 230, 200, 0.6)),
+                url('/public/imagen_fondo.png') center/cover no-repeat;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal con subrayado elegante */
+.info-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    color: #2d4a2e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-title::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: #2d7a2e;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+/* Títulos de tarjetas */
+.card-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2d4a2e;
+    margin-bottom: 15px;
+}
+
+/* Tarjetas personalizadas */
+.custom-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Listas dentro de las tarjetas */
+.card-body ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.card-body li {
+    margin-bottom: 8px;
+}
+
+/* Botones redondeados con sombra */
+.custom-button {
+    margin: 10px;
+    padding: 12px 30px;
+    background-color: #2d7a2e;
+    border-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(45, 122, 46, 0.4);
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    background-color: #256b27;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 107, 39, 0.5);
+}
+
+/* Descripción de los botones */
+.button-description {
+    max-width: 600px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+}

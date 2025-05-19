@@ -27,9 +27,9 @@ const EstimadorRenovable = () => {
         anio: parseInt(anio),
         consumo_kwh: parseFloat(consumo)
       });
-      setResultado(res.data.proporcion_renovable.toFixed(8));
-      setResultado1(res.data.consumo_renovable_estimado.toFixed(8));
-      setResultado2(res.data.porcentaje_estimado.toFixed(8));
+      setResultado(res.data.proporcion_renovable.toFixed(2));
+      setResultado1(res.data.consumo_renovable_estimado.toFixed(2));
+      setResultado2(res.data.porcentaje_estimado.toFixed(2));
       setError("");
     } catch (err) {
       setResultado(null);
@@ -38,9 +38,10 @@ const EstimadorRenovable = () => {
   };
 
   return (
-    <div className="container py-5 d-flex justify-content-center">
-      <div className="card shadow p-4" style={{ maxWidth: "600px", width: "100%" }}>
-        <h2 className="mb-4 text-center text-success">💡 Estimador de Energía Renovable</h2>
+    <div className="min-vh-100 d-flex justify-content-center align-items-center bg-light">
+      <div className="card shadow-lg p-5" style={{ maxWidth: "600px", width: "100%", borderRadius: "15px" }}>
+        <h2 className="text-center text-success mb-4">💡 Estimador de Energía Renovable</h2>
+
         <div className="mb-3">
           <label className="form-label fw-bold">🌍 País</label>
           <select className="form-select" value={pais} onChange={e => setPais(e.target.value)}>
@@ -73,27 +74,32 @@ const EstimadorRenovable = () => {
           />
         </div>
 
-        <div className="d-grid">
-          <button className="btn btn-success" onClick={calcular}>
+        <div className="d-grid mt-3">
+          <button className="btn btn-success fw-bold" onClick={calcular}>
             Calcular Proporción
           </button>
         </div>
 
         {resultado && (
-          <div className="alert alert-info mt-4 text-center">
-            <strong>{resultado}%</strong> de tu consumo podría cubrirse con energía renovables<br/>
-            <strong>{resultado1}Kw</strong> estimado de tu consumo<br/>
-            <strong>{resultado2}%</strong> estimado de tu consumo a futuro<br/>
+          <div className="mt-4">
+            <div className="alert alert-success text-center rounded-4">
+              <p className="mb-1"><strong>{resultado}%</strong> de tu consumo podría cubrirse con energías renovables</p>
+              <p className="mb-1">🔋 Estimado: <strong>{resultado1} kWh</strong></p>
+              <p className="mb-0">📈 Porcentaje estimado futuro: <strong>{resultado2}%</strong></p>
+            </div>
           </div>
         )}
 
         {error && (
-          <div className="alert alert-danger mt-4 text-center">{error}</div>
+          <div className="alert alert-danger mt-4 text-center rounded-4">{error}</div>
         )}
-        <Link to="/" className="btn btn-primary">
-            Regresar
-      </Link>
-      </div>      
+
+        <div className="d-grid mt-3">
+          <Link to="/" className="btn btn-outline-success">
+            ⬅ Regresar al inicio
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

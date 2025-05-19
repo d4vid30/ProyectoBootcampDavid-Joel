@@ -1,4 +1,7 @@
 import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import "../Graficos.css"; // Asegúrate de tener el CSS abajo en tu proyecto
 
 const Graficos = () => {
   const graficos = [
@@ -14,31 +17,39 @@ const Graficos = () => {
       nombre: 'Tendencia en la Capacidad Instalada',
       archivo: '/gifs/grafico_lineas_capacidad_instalada.gif',
     },
-    { 
+    {
       nombre: 'Consumo Energía Renovable vs Convencional',
       archivo: '/gifs/grafico_area_consumo_energia.gif',
     },
-    
   ];
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-center text-green-700">
-        Visualización de Gráficos de Energía Renovable
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <Container className="my-5 graficos-container">
+      <h1 className="text-center graficos-title mb-4">Visualización de Energías Renovables</h1>
+
+      <Row className="mb-4">
         {graficos.map((grafico, index) => (
-          <div key={index} className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-lg font-semibold mb-2">{grafico.nombre}</h2>
-            <img
-              src={grafico.archivo}
-              alt={grafico.nombre}
-              className="w-full rounded-md border"
-            />
-          </div>
+          <Col md={6} className="mb-4" key={index}>
+            <Card className="shadow grafico-card">
+              <Card.Body>
+                <Card.Title className="grafico-card-title">{grafico.nombre}</Card.Title>
+                <img
+                  src={grafico.archivo}
+                  alt={grafico.nombre}
+                  className="img-fluid rounded border"
+                />
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
+      </Row>
+
+      <div className="text-center mt-4">
+        <Link to="/" className="btn custom-button">
+          Volver a Inicio
+        </Link>
       </div>
-    </div>
+    </Container>
   );
 };
 
