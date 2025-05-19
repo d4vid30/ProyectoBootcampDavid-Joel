@@ -39,7 +39,7 @@ const energias = [
 
 const InfoEnergia = () => {
   return (
-    <Container className="my-5 info-container">
+    <Container fluid className="my-5 info-container">
       <h1 className="text-center info-title">Tipos de Energía Renovable</h1>
       <p className="text-center lead mb-4">
         Las energías renovables son fuentes naturales e inagotables que permiten generar electricidad de forma limpia y sostenible. Aquí te mostramos las principales.
